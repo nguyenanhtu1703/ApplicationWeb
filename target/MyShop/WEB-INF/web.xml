@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://java.sun.com/xml/ns/javaee"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+     id="WebApp_ID" version="3.0"
+     >
+<context-param> 
+   <description>Location to store uploaded file</description> 
+   <param-name>file-upload</param-name> 
+   <param-value>C:\Java\apache-tomcat-8.5.42\apache-tomcat-8.5.42\webapps\</param-value> 
+</context-param>
+<display-name>SimpleWebApp</display-name>
+ 
+ <servlet>
+	<servlet-name>example</servlet-name>
+	<servlet-class>com.nguyenanhtu.web.servlet.HomeServlet</servlet-class>
+</servlet>
+<servlet>
+ 	<servlet-name>UploadServlet</servlet-name>
+ 	<servlet-class>com.nguyenanhtu.web.servlet.UploadServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>SendEmailServlet</servlet-name>
+	<servlet-class>com.nguyenanhtu.web.servlet.SendEmailServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>example</servlet-name>
+	<url-pattern>/home</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>UploadServlet</servlet-name>
+	<url-pattern>/upload</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>SendEmailServlet</servlet-name>
+	<url-pattern>/sendemail</url-pattern>
+</servlet-mapping>
+ 
+<welcome-file-list>
+	<welcome-file>index.html</welcome-file>
+</welcome-file-list>
+ 
+</web-app>
